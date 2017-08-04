@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	{% load staticfiles %}
+	<link href="https://fonts.googleapis.com/css?family=Questrial|Roboto" rel="stylesheet">
+	<link rel="stylesheet"  type="text/css" href= {% static "buytextbooks/home.css" %} >
+  		<title>{% block title %}{% endblock %}</title>
+
+		<div style="float:right">
+			<input type="button" class="login" onclick="location.href='login.html';" value="Login"/>
+			<input type="button" class = "login" onclick="location.href='signup.html';" value="Sign Up"/>
+		</div>
+
+    		<h1>Book Hook</h1>
+
+        <div class = "container">
+          /*div 'container': this containers the navbar links and the searchbar form*/
+          <!--{% url 'books:home' %} explanation:
+            books - is the name of the app
+            home - is the view 
+          -->
+         	<ul>
+        	      <li><a class="active" href="{% url 'books:home' %}">Home</a></li>
+        	      <li><a class="active" href="{% url 'books:alltextbooks' %}">Buy Textbooks</a></li>
+        	      <li><a class="active" href="{% url 'books:allprepbooks' %}">Buy Prep Books</a></li>
+        	      <li><a class="active" href="sell.html">Sell Books</a></li>
+        	      <li><a class="active" href="{% url 'books:blog' %}">Blog</a></li>
+        	</ul>
+          <form role = "search" method = "get" action = "#">
+              <input type = "text" class = "searchbox" name = "q" value = "">
+              <button type = "submit">Search</button>
+          </form>
+
+        </div>
+
+  </head>
+
+
+<body>
+  {% block body %}
+  {% endblock %}
+
+</body>
+</html>

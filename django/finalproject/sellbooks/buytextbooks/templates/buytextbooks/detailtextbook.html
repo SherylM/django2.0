@@ -1,0 +1,12 @@
+{% extends 'buytextbooks/base.html'%}
+<title>{%block title %}details{% endblock %} </title>
+
+{%block body%}
+
+<h1>{{textbook.textbooktitle}}</h1>
+<img src="{{textbook.textbookimage}}">
+<h3>{{textbook.textbookauthor}}</h3>
+<h3>{{textbook.textbookpublisher}}</h3>
+<h3>{{textbook.textbooklocation}}</h3>
+
+{%endblock%}

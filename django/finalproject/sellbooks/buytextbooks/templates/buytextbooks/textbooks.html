@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% extends 'buytextbooks/base.html'%}
+  <title>{%block title %}textbooks{% endblock %} </title>
+
+</head>
+<body>
+{%block body%}
+{% if object_list %}
+  <h3>Here are all the Textbooks:</h3>
+    <ul>
+      {% for textbook in object_list %}
+        <li><a href = "{% url 'books:detailtextbook' textbook.id%}">{{textbook.textbooktitle}}</a></li>
+      {% endfor %}
+    </ul>
+
+{% endif %}
+{%endblock%}
+</body>
+</html>

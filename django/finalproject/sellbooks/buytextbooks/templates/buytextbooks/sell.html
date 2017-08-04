@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+	/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/* Set a style for all buttons */
+button {
+    background-color: #ABDB25;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.container {
+    padding: 16px;
+}
+	  </style>
+		<link href="https://fonts.googleapis.com/css?family=Questrial|Roboto" rel="stylesheet">
+		<link rel="stylesheet"  href="home.css">
+		<script>function previewFile() {
+  var preview = document.querySelector('img');
+  var file    = document.querySelector('input[type=file]').files[0];
+  var reader  = new FileReader();
+
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
+window.previewFile = previewFile;
+</script>
+	<title>Boop!</title>
+		 <div style="float:right">
+		<input type="button" onclick="location.href='login.html';" value="Login"/>
+	<input type="button" onclick="location.href='signup.html';" value="Sign Up"/>
+		</div>
+    <h1>Boop!</h1>
+  </head>
+  <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="textbooks.html">Buy Textbooks</a></li>
+      <li><a href="prepbooks.html">Buy Prep Books</a></li>
+      <li><a class="active" href="sell.html">Sell Books</a></li>
+      <li><a href="blog.html">Blog</a></li>
+	</ul>
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2>Sell Books</h2>
+    <form action="/action_page.php" style="border:1px solid #ccc">
+	     <div class="container">
+    <label><b>What kind of book are you selling today?</b></label><br>
+	<input type="radio" name="typebook" value="textbook"> Textbook<br>
+    <input type="radio" name="typebook" value="prepbook"> Prepbook<br><br>
+    </form>
+  <label><b>Book Title</b></label>
+    <input type="text" placeholder="Enter Book Title" name="booktitle" 			required>
+  <label><b>Author</b></label>
+  	<input type="text" placeholder="Enter Author Name" name="authorname" required>
+  <label><b>Publisher</b></label>
+  	<input type="text" placeholder="Enter Publisher Name" name="publisher" required>
+  <label><b>Condition</b></label>
+  	<form action="">
+    <input type="radio" name="condition" value="new"> New<br>
+    <input type="radio" name="condition" value="verygood"> Very Good<br>
+    <input type="radio" name="condition" value="good"> Good<br>
+    <input type="radio" name="condition" value="used"> Used<br><br>
+    </form>
+  <label><b>Location</b></label>
+  	<input type="text" placeholder="Enter Location (City, State) " name="location" required>
+  <label><b>Upload Photo</b></label><br><br>
+
+<input type="file" onchange="window.previewFile()"><br>
+<img src="" height="200" alt="Image preview...">
+
+    <div class="clearfix">
+      <button type="submit" class="submitbtn">Submit</button>
+	    </div>
+</body>
+</html>
