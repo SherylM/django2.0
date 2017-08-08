@@ -2,6 +2,7 @@
 <html>
 	<head>
 		{% extends 'buytextbooks/base.html'%}
+		<title>{%block title %}Book Hook - Login {% endblock %} </title>
 		 <input type="button" class="w3-right w3-button w3-hide-small w3-padding-large {%block linksix%} w3-hover-lime{% endblock%}" onclick="location.href='{% url 'books:login'%}';" value="Login"/>
 	</head>
 <body>
