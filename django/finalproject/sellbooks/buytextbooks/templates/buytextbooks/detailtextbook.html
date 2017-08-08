@@ -5,10 +5,10 @@
 
         <h1>{{textbook.textbooktitle}}</h1>
 
-            <a href = "{% url 'books:textbook-update' textbook.id %}"> Update this Textbook </a>
+
                 <img src="{{textbook.textbookimage.url}}">
                 <h3>{{textbook.textbookauthor}}</h3>
                 <h3>{{textbook.textbookpublisher}}</h3>
                 <h3>{{textbook.textbooklocation}}</h3>
-
+                <button><a href = "{% url 'books:textbook-update' textbook.id %}"> Update this Textbook </a></button>
     {% endblock %}

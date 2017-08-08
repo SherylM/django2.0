@@ -10,8 +10,8 @@
 <body>
 	<p class="w3-xlarge w3-center">{% block header%} Sell A Book! {%endblock%}</p>
 	{% block body %}
-			<a href = "{% url 'books:textbook-add' %}">add textbook</a>
-			<a href = "{% url 'books:prepbook-add' %}">add prepbook</a>
+			<button style='float:right'><a href = "{% url 'books:textbook-add' %}">Add Textbook</a></button>
+			<button style='float:left'><a href = "{% url 'books:prepbook-add' %}">Add Prepbook</a></button>
 	{% endblock %}
 </body>
 </html>
