@@ -1,12 +1,14 @@
 {% extends 'buytextbooks/base.html'%}
-<title>{%block title %}details{% endblock %} </title>
+<title>{%block title %} Textbook Details {% endblock %} </title>
+<a class="w3-left-align w3-bar-item w3-button w3-hide-small w3-padding-large {%block linktwo%} w3-padding-large w3-grey{% endblock%}" href="{% url 'books:alltextbooks' %}">Buy Textbooks</a>
+    {%block body%}
 
-{%block body%}
+        <h1>{{textbook.textbooktitle}}</h1>
 
-<h1>{{textbook.textbooktitle}}</h1>
-<img src="{{textbook.textbookimage}}">
-<h3>{{textbook.textbookauthor}}</h3>
-<h3>{{textbook.textbookpublisher}}</h3>
-<h3>{{textbook.textbooklocation}}</h3>
+            <a href = "{% url 'books:textbook-update' textbook.id %}"> Update this Textbook </a>
+                <img src="{{textbook.textbookimage.url}}">
+                <h3>{{textbook.textbookauthor}}</h3>
+                <h3>{{textbook.textbookpublisher}}</h3>
+                <h3>{{textbook.textbooklocation}}</h3>
 
-{%endblock%}
+    {% endblock %}

@@ -1,11 +1,15 @@
 {% extends 'buytextbooks/base.html'%}
-<title>{%block title %}details{% endblock %} </title>
+<title>{%block title %} Prepbook Details {% endblock %} </title>
+<a class="w3-left-align w3-bar-item w3-button w3-hide-small w3-padding-large {%block linkthree%} w3-padding-large w3-grey{% endblock%}" href="{% url 'books:allprepbooks' %}">Buy Prep Books</a>
 
-{%block body%}
+    {%block body%}
 
-<h1>{{prepbook.prepbooktitle}} </h1>
-<img src="{{prepbook.prepbookimage}}">
-<h3>{{prepbook.prepbookauthor}}</h3>
-<h3>{{prepbook.prepbookpublisher}}</h3>
-<h3>{{prepbook.prepbooklocation}}</h3>
-{%endblock%}
+        <h1>{{prepbook.prepbooktitle}} </h1>
+
+              <a href = "{% url 'books:prepbook-update' prepbook.id %}"> Update this Prepbook </a>
+                  <img src="{{prepbook.prepbookimage.url}}">
+                  <h3>{{prepbook.prepbookauthor}}</h3>
+                  <h3>{{prepbook.prepbookpublisher}}</h3>
+                  <h3>{{prepbook.prepbooklocation}}</h3>
+
+    {%endblock%}
